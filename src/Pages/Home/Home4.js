@@ -2,7 +2,9 @@
 import { Box, Card, CardContent, Grid, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import { TypographyText } from "../../Reuse/Reuse";
-import img1 from "../../Assets/7.jpg";
+import img1 from "../../Assets/MOV5141.jpeg";
+import img2 from "../../Assets/Movement_mfp-423.jpg";
+import img3 from "../../Assets/Movement_mfp-312.jpg";
 import { containerStyles4, Dataw } from "./Home3";
 
 const Home4 = () => {
@@ -23,8 +25,8 @@ const Home4 = () => {
 
           position: "relative",
           width: "100%",
-
-          backgroundImage: `url(${img1})`,
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          // backgroundImage: `url(${img1})`,
           backgroundSize: "cover",
           backgroundPosition: "top",
           margin: 0,
@@ -39,7 +41,7 @@ const Home4 = () => {
             right: 0,
             bottom: 0,
 
-             backgroundColor: "rgba(0, 0, 0, 0.5)", // Black background with 90% opacity
+             backgroundColor: "rgba(0, 0, 0, 0.7)", // Black background with 90% opacity
             zIndex: 1, // Lower z-index for the overlay
           }}
         />
@@ -53,7 +55,7 @@ const Home4 = () => {
                 <div data-aos="zoom-in">
                   <img
                     src={
-                      "https://as2.ftcdn.net/v2/jpg/01/36/97/97/1000_F_136979710_s0QKBojuBNPqVOpluOryMwiYi6Ea0NVi.jpg"
+                     img3
                     }
                     alt=""
                     width="100%"
@@ -64,7 +66,7 @@ const Home4 = () => {
                 <div data-aos="zoom-in">
                   <img
                     src={
-                      "https://img.freepik.com/premium-photo/gym-with-lot-equipment-lot-space_3535-33382.jpg?w=900"
+                      img2
                     }
                     alt=""
                     width="100%"

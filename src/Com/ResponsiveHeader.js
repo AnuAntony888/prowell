@@ -1,30 +1,38 @@
 import React from "react";
 import { useState } from "react";
-import { Button, Drawer } from "@mui/material";
+import { Button, Drawer, Menu, MenuItem } from "@mui/material";
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import { navItems } from "./Headers";
-
+import { dropdown, navItems } from "./Headers";
+import { Link } from "react-router-dom";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 const ResponsiveHeader = () => {
   const [openDrawer, setopenDrawer] = useState(false); 
 
   // Smooth scroll function for internal navigation
-  const handleScrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+  const handleScrollToSection = () => {
+  
       setopenDrawer(false);
-    }
+   
   };
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div>
       <IconButton
         onClick={() => setopenDrawer(!openDrawer)}
-        sx={{ float: "right" }}
+        sx={{ float: "right" ,color:'white'}}
       >
         <MenuIcon sx={{ float: "right" }} />
       </IconButton>
@@ -33,7 +41,7 @@ const ResponsiveHeader = () => {
         open={openDrawer}
         onClose={() => setopenDrawer(false)}
         PaperProps={{
-          sx: { width: "300px", bgcolor: "white" },
+          sx: { width: "300px", bgcolor: "#2D2D2D", color:'white' },
         }}
       >
         <List>
@@ -47,14 +55,66 @@ const ResponsiveHeader = () => {
               <ListItemButton sx={{ textAlign: "left" }}>
                 <Button
                   key={index}
-                  sx={{ textTransform: "capitalize" }}
-                  onClick={() => handleScrollToSection(item.sectionId)}
+                  sx={{
+                  
+                    textTransform: "capitalize", color: "white" 
+                    , fontFamily:"Khand"
+                     ,fontSize:'1.2rem',
+                  }}
+                  onClick={() => handleScrollToSection()}
                 >
-                  {item.label}
+               <Link to={item.link}>{item.label}</Link>   
                 </Button>
+  
               </ListItemButton>
             </ListItem>
+       
+               
+          
           ))}
+          <ListItem>
+          <Button
+                  id="basic-button"
+                  aria-controls={open ? "basic-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                  onClick={handleClick}
+                  sx={{
+                    fontWeight: "500",
+                       fontFamily:"Khand"
+                   ,fontSize:'1.2rem',
+                    textTransform: "capitalize",
+                    minWidth: "120px",
+                    color: "white",
+                  }}
+                >
+                  Brands &nbsp;&nbsp; <ArrowDropDownIcon />
+                </Button>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    "aria-labelledby": "basic-button",
+                  }}
+                >
+                  {dropdown.map((data, index) => (
+                    <MenuItem
+                    onClick={() => handleScrollToSection()}
+                      key={index}
+                      sx={{
+                        minWidth: "200px" ,
+                     fontFamily:'CamptonLight'
+                        ,
+                      }}
+                    >
+                      {" "}
+                      {data.name}
+                    </MenuItem>
+                  ))}
+                </Menu>
+        </ListItem>
         </List>
       </Drawer>
     </div>

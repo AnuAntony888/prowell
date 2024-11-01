@@ -1,9 +1,10 @@
 import img1 from '../../Assets/54.jpg'
+import img2 from '../../Assets/mov.jpeg'
 export const styles = {
     bg: {
       // maxWidth: "100%",
       width:'100%',
-      backgroundImage: `url("https://pics.craiyon.com/2023-07-30/e0732ecd8ef84ffeb66388adba8cf97b.webp")`,
+      backgroundImage: `url(${img2})`,
      
       backgroundSize: "cover",
     backgroundPosition: "center",

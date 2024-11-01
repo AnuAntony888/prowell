@@ -12,7 +12,7 @@ import {
   ListItemText,
 } from "@mui/material";
 
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import img1 from '../../Assets/cont.jpg'
 import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -40,10 +40,10 @@ const Contact = (props) => {
 
     emailjs
       .sendForm(
-        "service_euk05dp",
-        "template_ctedpxi",
+        "service_0auaq0i",
+        "template_ewhgn0a",
         form.current,
-        "-ER35YKpfAl5T5gD8"
+        "IkNjveX3-qfxw3Pw4"
       )
       .then(
         (result) => {
@@ -83,9 +83,9 @@ const Contact = (props) => {
             paddingLeft: "5%",
             paddingRight: "5%",
 
-            backgroundImage: `url(https://img.freepik.com/premium-photo/row-dumbbells-with-sun-setting-them_1254193-1411.jpg?w=1060)`,
+            backgroundImage: `url(${img1})`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "top",
             margin: 0,
             height: "100vh",
           }}
@@ -118,7 +118,7 @@ const Contact = (props) => {
                 Typography={<>Contact Us</>}
                 color="white"
                 variant={matches2 ? "h3" : "h4"}
-                // fontWeight="600"
+                      fontFamily="Khand"
               />
             </div>
           </Grid>
@@ -146,7 +146,8 @@ const Contact = (props) => {
                   style={{color:'#D66A3A'}}>Touch</span> </>}
           color="#04336C"
           fontSize="2rem"
-          textAlign={!isSmallScreen ? "left" : "centre"}
+                textAlign={!isSmallScreen ? "left" : "centre"}
+                         fontFamily="Khand"
          
         />
             </Grid>
@@ -163,6 +164,7 @@ const Contact = (props) => {
                 }
                 // color="#6A7C92"
                 textAlign="left"
+                 fontFamily='CamptonLight'
               />
               <br />
             </Grid>
@@ -183,12 +185,10 @@ const Contact = (props) => {
                       {data.listimg}
                     </ListItemIcon>
                     <ListItemText
-                      primary={data.listtxt}
-                      sx={{
-                        color: "#04336C",
-                        fontSize: ".9rem",
-                      }}
-                    />
+                      
+                                       ><span style={{  color: "#04336C",
+                      
+                      fontFamily:'CamptonLight'}}>{data.listtxt}</span></ListItemText>
                   </ListItemButton>
                 </ListItem>
               ))}
@@ -211,6 +211,7 @@ const Contact = (props) => {
                   <span style={{color:'#D66A3A'}}> a Line</span></>}
                 color="white"
                 fontSize="2rem"
+                     fontFamily="Khand"
               />
             </Grid>
             <Grid item xs={12} lg={12} md={12} sm={12}>
@@ -235,7 +236,7 @@ const Contact = (props) => {
                             height: "150px",
                             width: "100%",
                             border: "none",
-                            fontFamily: "'Poppins', sans-serif",
+                     fontFamily:'CamptonLight',
                        color:'white',
                             backgroundColor: "rgba(255, 255, 255, 0.1)",
                           }}
@@ -245,13 +246,15 @@ const Contact = (props) => {
                           fullWidth
                           type={data.type}
                           name={data.name}
-                          placeholder={data.placeholder}
+                            placeholder={data.placeholder}
+                   
                           required
                           style={{
                             height: "40px",
                             width: "100%",
                             border: "none",
-                            fontFamily: "'Poppins', sans-serif",
+                            color:'white',
+                          fontFamily:'CamptonLight',
                             backgroundColor: "rgba(255, 255, 255, 0.1)",
                           }}
                         />
@@ -268,7 +271,7 @@ const Contact = (props) => {
                         color: "white",
                         textAlign: "left",
                         textTransform: "capitalize",
-                        fontFamily: "'Poppins', sans-serif",
+                        fontFamily:"Khand",
                       }}
                     >
                       Send Message
@@ -286,22 +289,25 @@ const Contact = (props) => {
 export default Contact;
 
 const Listcontent = [
-  {
-    listimg: <LocationOnIcon />,
-    listtxt: <></>,
-  },
+  // {
+  //   listimg: <LocationOnIcon />,
+  //   listtxt: <></>,
+  // },
   {
     listimg: <EmailIcon />,
-    listtxt: <></>,
+    listtxt: <>
+<span style={{fontWeight:'bold'}}>Customer Support:</span><br/>
+support@myfamilyfitness.com<br/>
+<span style={{fontWeight:'bold'}}>Sales/Service Enquiry:</span><br/>
+sales@myfamilyfitness.com</>,
   },
   {
     listimg: <LocalPhoneIcon />,
 
     listtxt: (
       <>
-        Toll-Free Number: 800-326459
-        <br />
-        Available 24/7 for consultations and service
+        +971 56 4127900 / 800-326459 (Toll Free)
+      
       </>
     ),
   },

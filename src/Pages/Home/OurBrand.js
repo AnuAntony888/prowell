@@ -2,15 +2,10 @@ import React, { useState } from "react";
 import { Buttons, TypographyText } from "../../Reuse/Reuse";
 import { Box, Grid, Tab, Tabs, useMediaQuery, useTheme } from "@mui/material";
 import { containerStyles4 } from "./Home3";
-import BrandVa from "./BrandVa";
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import { useNavigate } from "react-router";
+import img1 from '../../Assets/Cópia de Cópia de movement_air1 (1).jpg'
+import img2 from '../../Assets/Movement_mfp-430.jpg'
 
 const OurBrand = () => {
   const theme = useTheme(); // Get the theme object
@@ -35,7 +30,7 @@ const OurBrand = () => {
                 <div data-aos="zoom-in">
                   <img
                     src={
-                      "https://as2.ftcdn.net/v2/jpg/01/36/97/97/1000_F_136979710_s0QKBojuBNPqVOpluOryMwiYi6Ea0NVi.jpg"
+                      img1
                     }
                     alt=""
                     width="100%"
@@ -46,7 +41,7 @@ const OurBrand = () => {
                 <div data-aos="zoom-in">
                   <img
                     src={
-                      "https://img.freepik.com/premium-photo/gym-with-lot-equipment-lot-space_3535-33382.jpg?w=900"
+                      img2
                     }
                     alt=""
                     width="100%"
@@ -106,48 +101,7 @@ const OurBrand = () => {
             />
           </Grid>
 
-          {/* <Grid item xs={12} lg={6} md={6} sx={6}>
-            {Accordn.map((data, index) => (
-              <>
-                <Accordion
-                  defaultExpanded={index === 0 ? true : false}
-                  sx={{
-                    boxShadow: "none",
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
-                    aria-controls={`panel${index}-content`}
-                    id={`panel${index}-header`}
-                  >
-                    <TypographyText
-                      Typography={data.text1}
-                      color="#D66A3A"
-                      fontSize="1.5rem"
-                      textAlign="left"
-                      fontFamily="Khand"
-                    />
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <TypographyText
-                      Typography={data.text2}
-                      color="white"
-                      fontSize="15px"
-                      textAlign={!isSmallScreen ? "left" : "centre"}
-                      fontFamily="CamptonLight"
-                    />
-                    <Buttons
-                      Buttonname={"Read More"}
-                      color="white"
-                      textAlign="left"
-                      onClick={() => navigate(data.onClick)}
-                    />
-                  </AccordionDetails>
-                </Accordion>
-              </>
-            ))}
-          </Grid> */}
+          
           <Grid item xs={12}>
             <Box
               sx={{
@@ -203,38 +157,7 @@ const OurBrand = () => {
             </Box>
           </Grid>
 
-          {/* <Grid item xs={12} lg={6} md={6} sx={6}></Grid>
-
-          <Grid item xs={12} lg={6} md={6} sx={6}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-              
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-                      "https://images.pexels.com/photos/2247179/pexels-photo-2247179.jpeg?auto=compress&cs=tinysrgb&w=600"
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-                      "https://img.freepik.com/free-photo/bodybuilder-training-arm-with-resistance-band_7502-4758.jpg?w=1060&t=st=1729320174~exp=1729320774~hmac=b870b28488a89515a3cade12c2182e22085211ce27c3dc8f0be949439d6a517d"
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>{" "}
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}></Grid>
-            </Grid>
-          </Grid> */}
+    
         </Grid>
       </Box>
 

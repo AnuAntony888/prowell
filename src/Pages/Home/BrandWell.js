@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 
-import img1 from "../../Assets/28.jpg";
+import img1 from "../../Assets/35.jpg";
 import img2 from "../../Assets/27.png";
 import img3 from "../../Assets/32.png";
 import img4 from "../../Assets/31.png";

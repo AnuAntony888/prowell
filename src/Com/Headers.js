@@ -70,7 +70,11 @@ const Headers = () => {
                 {navItems.map((item, index) => (
                   <Button
                     key={index}
-                    sx={{ textTransform: "capitalize", color: "white" }}
+                    sx={{
+                      textTransform: "capitalize", color: "white" 
+                     , fontFamily:"Khand"
+                      ,fontSize:'1.2rem',
+                    }}
                     
                   >
                     <Link to={item.link}>                    {item.label}</Link>
@@ -87,8 +91,8 @@ const Headers = () => {
                   onClick={handleClick}
                   sx={{
                     fontWeight: "500",
-                    fontFamily: "'Poppins', sans-serif",
-                    fontSize: ".9rem",
+                       fontFamily:"Khand"
+                   ,fontSize:'1.2rem',
                     textTransform: "capitalize",
                     minWidth: "120px",
                     color: "white",
@@ -112,7 +116,11 @@ const Headers = () => {
                         // navigate(data.link);
                       }}
                       key={index}
-                      sx={{ minWidth: "200px" }}
+                      sx={{
+                        minWidth: "200px" ,
+                     fontFamily:'CamptonLight'
+                        ,
+                      }}
                     >
                       {" "}
                       {data.name}
@@ -130,7 +138,7 @@ const Headers = () => {
         </Toolbar>
       </AppBar>
       <FloatingWhatsApp
-        phoneNumber="sssss"
+        phoneNumber="+971 56 412 7900"
         accountName="prowell.life"
         allowEsc
         allowClickAway
@@ -146,11 +154,11 @@ const Headers = () => {
 
 export default Headers;
 export const navItems = [{
-  label: '',
+  label: 'Home',
   link:'/'
 },
   {
-    label: 'About',
+    label: 'About Us',
     link: '/aboutus'
 
   },
@@ -158,25 +166,26 @@ export const navItems = [{
     label: 'Contact',
     link: '/contact'
   },
-  {
-    label: 'LifeCube',
-    link:'/lifecube'
-  }
-  ,
-  { link: "/nootrie", label: "Nootrie" },
-  {
-    link: '/Turtlegym',
-    label:'Turtle Gym'
-  },
-  {
-    link: '/Motioncare',
-    label:'Motioncare'
-  }
-  ,
-  {
-    link: '/PlayPark',
-  label:'PlayPark'
-}]
+//   {
+//     label: 'LifeCube',
+//     link:'/lifecube'
+//   }
+//   ,
+//   { link: "/nootrie", label: "Nootrie" },
+//   {
+//     link: '/Turtlegym',
+//     label:'Turtle Gym'
+//   },
+//   {
+//     link: '/Motioncare',
+//     label:'Motioncare'
+//   }
+//   ,
+//   {
+//     link: '/PlayPark',
+//   label:'PlayPark'
+  // }
+]
 
 
 export const dropdown = [

@@ -12,6 +12,7 @@ import Nootri from '../Pages/Extracontent/Nootri';
 import Turtle from '../Pages/Extracontent/Turtle';
 import Motioncare from '../Pages/Extracontent/Motioncare';
 import PlayPark from '../Pages/Extracontent/PlayPark';
+import Highlights from '../Pages/Extracontent/Highlights';
 
 
 const Navigate = () => {
@@ -38,7 +39,8 @@ const Navigate = () => {
         <Route path="/Nootrie" element={<Nootri />}></Route>
         <Route path="/Turtlegym" element={<Turtle />}></Route>  
         <Route path="/Motioncare" element={<Motioncare />}></Route>
-        <Route path="/PlayPark" element={<PlayPark/> }></Route>
+        <Route path="/PlayPark" element={<PlayPark />}></Route>
+        <Route path="/annualmaintenance" element={<Highlights />}></Route>
       </Routes>
     </div>
   )

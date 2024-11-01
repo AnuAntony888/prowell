@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { TypographyText } from "../../Reuse/Reuse";
-import img1 from '../../Assets/bann.jpg'
+import img1 from '../../Assets/MOVCROSS-043.jpeg'
 import Home2 from "./Home2";
 import Home3 from "./Home3";
 import Home4 from "./Home4";
@@ -35,9 +35,9 @@ const Home1 = () => {
           paddingLeft: "5%",
           paddingRight: "5%",
 
-          backgroundImage: `url(https://as2.ftcdn.net/v2/jpg/03/20/49/25/1000_F_320492530_2aeFG0eKU03OM20OD4eLzRte0K6xpw9i.jpg)`,
+          backgroundImage: `url(${img1})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+           backgroundPosition: "centre",
             margin: 0,
             height :'100vh'
           

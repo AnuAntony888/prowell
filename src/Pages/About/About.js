@@ -1,7 +1,7 @@
 import { Box, Grid, useMediaQuery, useTheme } from '@mui/material';
 import React, { useEffect } from 'react'
 import { TypographyText, useScreenSize } from '../../Reuse/Reuse';
-import img1 from '../../Assets/55.jpg'
+import img1 from '../../Assets/43.jpg'
 import Home4 from '../Home/Home4';
 import Home3 from '../Home/Home3';
 

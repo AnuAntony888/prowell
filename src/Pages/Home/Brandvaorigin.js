@@ -30,7 +30,7 @@ const Brandvaorigin = () => {
         paddingLeft: "5%",
         paddingRight: "5%",
         marginTop: "60px",
-        backgroundImage: `url(${img1})`,
+        backgroundImage: `url(https://magazine.vaha.com/wp-content/uploads/2022/01/Meditations_Session_mit_dem_VAHA-1-1560x878.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         margin: 0,

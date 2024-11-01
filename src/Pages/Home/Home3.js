@@ -9,8 +9,10 @@ import {
 } from "@mui/material";
 import React from "react";
 import { TypographyText } from "../../Reuse/Reuse";
-import img1 from "../../Assets/34.jpg";
-import img2 from "../../Assets/25.png";
+import img1 from "../../Assets/MOV5141.jpeg";
+import img2 from "../../Assets/Movement_mfp-312.jpg";
+import img3 from "../../Assets/55.jpg";
+import img4 from "../../Assets/Cópia de Cópia de movement_air1 (1).jpg";
 const Home3 = () => { const theme = useTheme(); // Get the theme object
   
   const isSmallScreen = useMediaQuery(theme.breakpoints.up("md"));
@@ -29,7 +31,7 @@ const Home3 = () => { const theme = useTheme(); // Get the theme object
                 <div data-aos="zoom-in">
                   <img
                     src={
-                      "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600"
+img3
                     }
                     alt=""
                     width="100%"
@@ -60,7 +62,7 @@ const Home3 = () => { const theme = useTheme(); // Get the theme object
                 Typography={
                   <>
                     Our
-                    <span style={{ color: "#D66A3A" }}>Journey</span>
+                    <span style={{ color: "#D66A3A" }}> Journey</span>
                   </>
                 }
                 variant={matches2 ? "h3" : "h4"}
@@ -146,7 +148,8 @@ const Home3 = () => { const theme = useTheme(); // Get the theme object
                 <div data-aos="zoom-in">
                   <img
                     src={
-          'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+                      img4
+          // 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                     }
                     alt=""
                     width="100%"
