@@ -161,9 +161,9 @@ const Home4 = () => {
               xs={12}
               md={6}
               lg={4}
-              sm={4}
+              sm={6}
               key={index}
-              sx={{}}
+              sx={{margin:'auto'}}
               data-aos="fade-left"
             >
               <Card

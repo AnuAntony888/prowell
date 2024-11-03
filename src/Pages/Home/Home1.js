@@ -21,7 +21,8 @@ const Home1 = () => {
 )
 
   const theme = useTheme(); // Get the theme object
-  const isSmallScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  
   return (
     <React.Fragment>
       <Grid
@@ -69,13 +70,10 @@ const Home1 = () => {
           <div data-aos="fade-up">
             <TypographyText
               Typography={<>ProWell.Life
-By MFF</>}
-              color="white"
+By MFF</>}              color="white"
               variant={isSmallScreen ? "h3" : "h4"}
-              fontFamily="Khand"
-         
-              // fontWeight="600"
-            />
+              fontFamily="Khand"        
+                      />
             <TypographyText
               Typography={
                 <>

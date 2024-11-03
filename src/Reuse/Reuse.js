@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import Button from "@mui/material/Button";
-import filePath from '../Assets/Prowell. Life Brochure.pdf'
+
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 export const useScreenSize = () => {
