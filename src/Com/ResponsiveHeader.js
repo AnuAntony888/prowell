@@ -74,6 +74,67 @@ const ResponsiveHeader = () => {
           ))}
           <ListItem>
           <Button
+    id="basic-button"
+    aria-controls={open ? "basic-menu" : undefined}
+    aria-haspopup="true"
+    aria-expanded={open ? "true" : undefined}
+    onMouseEnter={handleClick} // Open on hover
+    sx={{
+      fontWeight: "500",
+      fontFamily: "Khand",
+      fontSize: '1.2rem',
+      textTransform: "capitalize",
+      minWidth: "120px",
+      color: "white",
+    }}
+  >
+    Brands &nbsp;&nbsp; <ArrowDropDownIcon />
+  </Button>
+  <Menu
+    id="basic-menu"
+    anchorEl={anchorEl}
+    open={open}
+    onClose={handleClose}
+    MenuListProps={{
+      "aria-labelledby": "basic-button",
+      onMouseLeave: handleClose,
+      sx: { paddingTop: '0', paddingBottom: '0' } // Apply padding styles here
+    }}
+                  onMouseLeave={handleClose} // Close on mouse
+                  sx={{paddingTop:'0',paddingBottom:'0'}}
+             >
+    {dropdown.map((data, index) => (<>
+      <MenuItem
+        onClick={() => {
+          handleClose();
+          // navigate(data.link);
+        }}
+        key={index}
+        sx={{
+          minWidth: "200px",
+          fontFamily: "Khand",
+          backgroundColor: 'black',
+          color: 'white',
+          fontSize: '1.2rem',
+          textAlign:'center',
+          padding:'5%',
+          '&.Mui-selected': {
+            backgroundColor: 'black', // Background for selected item
+            color: 'white', // Optional: Ensures text is visible on black background
+          },
+          '&:hover': {
+            color: 'orange',
+            backgroundColor: 'black', // Slight blur effect
+            // backdropFilter: 'blur(5px)' // Applies a blur effect
+          }
+        }}
+      >
+        {data.name}
+      </MenuItem>
+      <hr style={{color:'orange',backgroundColor:'black',margin:'0'}}/>
+ </>   ))}
+  </Menu>
+          {/* <Button
                   id="basic-button"
                   aria-controls={open ? "basic-menu" : undefined}
                   aria-haspopup="true"
@@ -113,7 +174,7 @@ const ResponsiveHeader = () => {
                       {data.name}
                     </MenuItem>
                   ))}
-                </Menu>
+                </Menu> */}
         </ListItem>
         </List>
       </Drawer>

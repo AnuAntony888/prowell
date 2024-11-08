@@ -18,6 +18,7 @@ import img5 from "../../Assets/30.png";
 import img6 from "../../Assets/29.png";
 
 import DownloadBrochure, { TypographyText } from "../../Reuse/Reuse";
+import ContForm from "../ContactUs/ContForm";
 
 const BrandWell = () => {
   useEffect(() => {
@@ -123,7 +124,7 @@ const BrandWell = () => {
               marginBottom: !isSmallScreen ? "100px" : "",
             }}
           >
-            <CardContent>
+            <CardContent sx={{margin:'2%'}}>
               <TypographyText
                 Typography={"Well Sytem"}
                 fontSize={"2rem"}
@@ -160,9 +161,10 @@ const BrandWell = () => {
                   </>
                 }
                   fontFamily='CamptonLight'
-                textAlign="left"
+            textAlign="justify"
                 color="white"
               />
+              <br/>
                    <DownloadBrochure />
             </CardContent>
           </Card>
@@ -186,6 +188,7 @@ const BrandWell = () => {
           </Grid>
         ))}
       </Grid>
+      <ContForm/>
     </>
   );
 };

@@ -22,15 +22,7 @@ const Headers = () => {
     window.location.href = "/";
   }
 
-  const [navactive, setNavactive] = useState("#");
-
-  // Smooth scroll function for internal navigation
-  const handleScrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -73,7 +65,8 @@ const Headers = () => {
                     sx={{
                       textTransform: "capitalize", color: "white" 
                      , fontFamily:"Khand"
-                      ,fontSize:'1.2rem',
+                      , fontSize: '1.2rem',
+                      minWidth:'150px'
                     }}
                     
                   >
@@ -83,55 +76,77 @@ const Headers = () => {
                 ))}
 
 
-                <Button
-                  id="basic-button"
-                  aria-controls={open ? "basic-menu" : undefined}
-                  aria-haspopup="true"
-                  aria-expanded={open ? "true" : undefined}
-                  onClick={handleClick}
-                  sx={{
-                    fontWeight: "500",
-                       fontFamily:"Khand"
-                   ,fontSize:'1.2rem',
-                    textTransform: "capitalize",
-                    minWidth: "120px",
-                    color: "white",
-                  }}
-                >
-                  Brands &nbsp;&nbsp; <ArrowDropDownIcon />
-                </Button>
-                <Menu
-                  id="basic-menu"
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  MenuListProps={{
-                    "aria-labelledby": "basic-button",
-                  }}
-                >
-                  {dropdown.map((data, index) => (
-                    <MenuItem
-                      onClick={() => {
-                        handleClose();
-                        // navigate(data.link);
-                      }}
-                      key={index}
-                      sx={{
-                        minWidth: "200px" ,
-                     fontFamily:'CamptonLight'
-                        ,
-                      }}
-                    >
-                      {" "}
-                      {data.name}
-                    </MenuItem>
-                  ))}
-                </Menu>
+  <Button
+    id="basic-button"
+    aria-controls={open ? "basic-menu" : undefined}
+    aria-haspopup="true"
+    aria-expanded={open ? "true" : undefined}
+    onMouseEnter={handleClick} // Open on hover
+    sx={{
+      fontWeight: "500",
+      fontFamily: "Khand",
+      fontSize: '1.2rem',
+      textTransform: "capitalize",
+      minWidth: "120px",
+      color: "white",
+    }}
+  >
+    Brands &nbsp;&nbsp; <ArrowDropDownIcon />
+  </Button>
+  <Menu
+    id="basic-menu"
+    anchorEl={anchorEl}
+    open={open}
+    onClose={handleClose}
+    MenuListProps={{
+      "aria-labelledby": "basic-button",
+      onMouseLeave: handleClose, // Close on mouse leave
+      sx: { paddingTop: '0', paddingBottom: '0' } // Apply padding styles here
+    }}
+                  onMouseLeave={handleClose} // Close on mouse
+                  sx={{paddingTop:'0',paddingBottom:'0',marginTop:'10px'}}
+             >
+    {dropdown.map((data, index) => (<>
+      <MenuItem
+        onClick={() => {
+          handleClose();
+          // navigate(data.link);
+        }}
+        key={index}
+        sx={{
+          minWidth: "200px",
+          fontFamily: "Khand",
+          backgroundColor: 'black',
+          color: 'white',
+          fontSize: '1.2rem',
+          textAlign:'center',
+          padding:'5%',
+          '&.Mui-selected': {
+            backgroundColor: 'black', // Background for selected item
+            color: 'white', // Optional: Ensures text is visible on black background
+          },
+          '&:hover': {
+            color: 'orange',
+            backgroundColor: 'black', // Slight blur effect
+            // backdropFilter: 'blur(5px)' // Applies a blur effect
+          }
+        }}
+      >
+        {data.name}
+      </MenuItem>
+  
+ </>   ))}
+  </Menu>
+
+
+          
               </Box>
             </>
           ) : (
             <>
-              <img src={img1} alt="" width="200px" />
+                {/* <img src={img1} alt="" width="200px" /> */}
+                <Link to='/'>
+                <img src={img1} alt="" width="150px" /></Link>
               <ResponsiveHeader />
             </>
           )}

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Buttons, TypographyText } from "../../Reuse/Reuse";
 import { Box, Grid, Tab, Tabs, useMediaQuery, useTheme } from "@mui/material";
 import { containerStyles4 } from "./Home3";
-
 import { useNavigate } from "react-router";
 import img1 from '../../Assets/Cópia de Cópia de movement_air1 (1).jpg'
 import img2 from '../../Assets/Movement_mfp-430.jpg'
+import SlideBrand from "./SlideBrand";
+
 
 const OurBrand = () => {
   const theme = useTheme(); // Get the theme object
@@ -21,37 +22,8 @@ const OurBrand = () => {
     <React.Fragment>
       <Box sx={containerStyles4}>
         <Grid container spacing={2}>
-          <Grid item xs={12} lg={6} md={6} sm={12}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                {/* Content for the first grid item */}
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-                      img1
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-                      img2
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>{" "}
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}></Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} lg={6} md={6} sm={12} sx={{ margin: "auto" }}>
+      
+          <Grid item xs={12} lg={12} md={12} sm={12} sx={{ margin: "auto" }}>
             <div
               data-aos="fade-left"
               data-aos-offset="300"
@@ -65,7 +37,7 @@ const OurBrand = () => {
                   </>
                 }
                 variant={matches2 ? "h3" : "h4"}
-                textAlign="left"
+       
                 color="white"
                 fontFamily="Khand"
               />
@@ -100,17 +72,19 @@ const OurBrand = () => {
               fontFamily="CamptonLight"
             />
           </Grid>
-
-          
           <Grid item xs={12}>
-            <Box
+            <SlideBrand/>
+            </Grid>
+          
+            {/*   <Grid item xs={12}>
+             <Box
               sx={{
                 width: "100%",
                 bgcolor: "rgba(255, 255, 255, 0.1)",
                 borderRadius: 1,
               }}
             >
-              {/* Tab navigation */}
+ 
               <Tabs
                 value={value}
                 onChange={handleTabChange}
@@ -134,7 +108,7 @@ const OurBrand = () => {
                 ))}
               </Tabs>
 
-              {/* Tab Panels */}
+     
               {Accordn.map((data, index) => (
                 <TabPanel value={value} index={index} key={index}>
                   <Box sx={{ p: 2 }}>
@@ -155,18 +129,20 @@ const OurBrand = () => {
                 </TabPanel>
               ))}
             </Box>
-          </Grid>
+          </Grid> */}
 
     
         </Grid>
       </Box>
 
       {/******************Accordian*********************/}
+
     </React.Fragment>
   );
 };
 
 export default OurBrand;
+
 const Accordn = [
   {
     onClick: "/vaha",

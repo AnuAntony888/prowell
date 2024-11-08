@@ -1,9 +1,17 @@
 import { Card, Grid, useMediaQuery, useTheme } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { TypographyText } from "../../Reuse/Reuse";
 import img1 from "../../Assets/firstimg.jpg";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Home2 = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Set animation duration (in ms)
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
     const theme = useTheme(); // Get the theme object
   const isSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
   return (
@@ -91,9 +99,13 @@ seamlessly into daily life
           />
         </Grid>
         <Grid item lg={6} md={6} xs={12} sm={12} >
-        <img src={img1} alt="" 
+        
+          <div data-aos="zoom-in">
+          <img src={img1} alt="" 
            width={'100%'}
           />
+        </div>
+      
         </Grid>
         
               

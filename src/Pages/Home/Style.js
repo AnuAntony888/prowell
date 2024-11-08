@@ -37,6 +37,23 @@ export const styles = {
   backgroundPosition: "center",
   position: "relative",
   },
-    
+  bgsearch: {
+    width: "100%",
+
+    background:
+      "linear-gradient(to right, #1E1E1E 0%, #1E1E1E 50%, #CF6739 50%,#CF6739  100%), linear-gradient(to right, #CF6739 0%, #CF6739 50%, #1E1E1E 50%, #1E1E1E 100%)",
+    backgroundSize: "100% 50%",
+    backgroundPosition: "center top, center bottom",
+    backgroundRepeat: "no-repeat",
+  },
+  bgsearch1: {
+    width: "100%",
+
+    background:
+      "linear-gradient(to right, #191919 0%, #191919 50%, #04336C 50%,#04336C  100%), linear-gradient(to right, #04336C 0%, #04336C 50%, #191919 50%, #191919 100%)",
+    backgroundSize: "100% 50%",
+    backgroundPosition: "center top, center bottom",
+    backgroundRepeat: "no-repeat",
+  },    
   };
   

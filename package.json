@@ -17,13 +17,18 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-floating-whatsapp": "^5.0.8",
+    "react-id-swiper": "^4.0.0",
+    "react-lazy-load-image-component": "^1.6.2",
     "react-router": "^6.27.0",
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
+    "react-slideshow-image": "^4.3.2",
     "react-toastify": "^10.0.6",
     "react-whatsapp": "^0.3.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.13",
+    "swiper": "^11.1.14",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

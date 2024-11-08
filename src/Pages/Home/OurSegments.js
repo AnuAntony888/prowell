@@ -1,7 +1,7 @@
 
 
 import { Box, Grid, useMediaQuery } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 
 import img1 from "../../Assets/8.jpg";
 import img2 from "../../Assets/6.jpg";
@@ -10,8 +10,16 @@ import img4 from "../../Assets/4.jpg";
 
 import { TypographyText, useScreenSize } from "../../Reuse/Reuse";
 import { styles } from "./Style";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const OurSegments = () => {
   const matches2 = useScreenSize();
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Set animation duration (in ms)
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
   return (
     <Box sx={{ ...styles.bg }}>
       <Box sx={{ paddingTop: "5%" }}>
@@ -29,7 +37,11 @@ const OurSegments = () => {
 
       <br />
       <br />
+
       <Box sx={{ pt: "3%", pl: "10%", pb: "3%" }}>
+      <div data-aos="flip-left"
+
+>
         <Grid container
       
         >
@@ -64,7 +76,8 @@ const OurSegments = () => {
               />
             </Box>
           </Grid>
-        </Grid>
+          </Grid>
+          </div>
       </Box>
 
       {/********************second************************** */}

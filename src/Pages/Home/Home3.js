@@ -13,6 +13,8 @@ import img1 from "../../Assets/MOV5141.jpeg";
 import img2 from "../../Assets/Movement_mfp-312.jpg";
 import img3 from "../../Assets/55.jpg";
 import img4 from "../../Assets/Cópia de Cópia de movement_air1 (1).jpg";
+import { styles } from "./Style";
+import ContForm from "../ContactUs/ContForm";
 const Home3 = () => { const theme = useTheme(); // Get the theme object
   
   const isSmallScreen = useMediaQuery(theme.breakpoints.up("md"));
@@ -22,37 +24,8 @@ const Home3 = () => { const theme = useTheme(); // Get the theme object
     <React.Fragment>
       <Box sx={containerStyles4}>
         <Grid container spacing={2}>
-          <Grid item xs={12} lg={6} md={6} sm={12}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                {/* Content for the first grid item */}
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-img3
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-                      img1
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>{" "}
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}></Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} lg={6} md={6} sm={12} sx={{ margin: "auto" }}>
+   
+          <Grid item xs={12} lg={12} md={12} sm={12} sx={{ margin: "auto" }}>
             <div
               data-aos="fade-left"
               data-aos-offset="300"
@@ -66,13 +39,14 @@ img3
                   </>
                 }
                 variant={matches2 ? "h3" : "h4"}
-                textAlign="left"
+           
                 color="white"
                   fontFamily="Khand"
               />
              
             </div>
           </Grid>
+          
           <Grid item xs={12}>
             <TypographyText
               Typography={
@@ -100,14 +74,24 @@ img3
               textAlign="left"
               margin="auto"
             />
+            <br/>    <br/>
           </Grid>
 
 
+          <Grid item xs={2}></Grid>
+          <Grid item xs={8} sx={{ ...styles.bgsearch1 }}>
+          <Box sx={{ p: "5%" }}>
+              <img
+                src={img4}
+                alt=""
+                width="100%"
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={2}></Grid>
 
 
-
-
-          <Grid item xs={12} lg={4} md={5} sm={12} sx={{ margin: "auto" }}>
+          <Grid item xs={12} lg={12} md={12} sm={12} sx={{ margin: "auto" }}>
             <div
               data-aos="fade-left"
               data-aos-offset="300"
@@ -121,52 +105,24 @@ img3
                   </>
                 }
                 variant={matches2 ? "h3" : "h4"}
-                textAlign="left"
+                // textAlign="left"
                 color="white"
                       fontFamily="Khand"
               />
              
             </div>
           </Grid>
-          <Grid item xs={12} lg={8} md={7} sm={12}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                {/* Content for the first grid item */}
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-                     img2
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}>
-                <div data-aos="zoom-in">
-                  <img
-                    src={
-                      img4
-          // 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-                    }
-                    alt=""
-                    width="100%"
-                  />
-                </div>{" "}
-              </Grid>
-              <Grid item xs={12} lg={6} md={6} sm={6}></Grid>
-            </Grid>
-          </Grid>
+     
         
           <Grid item xs={12}>
             <TypographyText
               Typography={
                 <>
                 
-                Our mission is to inspire and empower individuals and organizations to embrace wellness by providing cutting-edge equipment and personalized fitness solutions. We focus on creating seamless integrations of fitness into daily life, ensuring that our offerings not only meet but enhance the well-being of those we serve.
-
+                At Prowell.life, our mission is to inspire and empower individuals and organizations to embrace wellness by providing state-of-the-art equipment and innovative fitness solutions that seamlessly integrate into daily life. We believe in designing personalized wellness spaces that foster motivation, comfort, and long-term commitment to health. Our comprehensive approach ensures that every project is tailored to the unique needs of our clients, promoting an environment where wellness is accessible, effective, and transformative.
+                  <br />
+                  <br/>
+Driven by our commitment to excellence, we blend cutting-edge design with practical functionality, crafting spaces that not only meet but exceed expectations. From boutique fitness centers to luxurious hotel gyms, our dedication to customer satisfaction extends beyond initial installation to include consistent support and maintenance. We strive to make wellness an essential, enjoyable part of life, offering solutions that are both innovative and rooted in industry expertise.
 
 
            </>
@@ -180,85 +136,8 @@ img3
         </Grid>
       </Box>
 
-      {/*************Why Are We Your Best Choice*********************/}
-{/* 
-      <Grid
-        container
-        spacing={2}
-        id="home"
-        sx={{
-          position: "relative",
-          width: "100%",
-  
-          backgroundImage: `url(https://img.freepik.com/free-photo/3d-gym-equipment_23-2151114137.jpg)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-            margin: 0,
-          padding:'5%'
-        }}
-      >
-        <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
+<ContForm/>
 
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Black background with 90% opacity
-            zIndex: 1, // Lower z-index for the overlay
-          }}
-        />
-        <Grid container sx={{ zIndex: 2, position: "relative" }} spacing={4}>
-          <Grid xs={12}>
-            {" "}
-            <TypographyText
-                          Typography={<>Why Are We Your
-                              Best Choice</>}
-              color="white"
-              variant={isSmallScreen ? "h3" : "h4"}
-       
-              margin="auto"
-            />
-          </Grid>
-          {Data.map((data, index) => (
-            <Grid
-              item
-              xs={12}
-              md={6}
-              lg={4}
-              sm={4}
-              key={index}
-              sx={{}}
-              data-aos="fade-left"
-            >
-              <Card
-                sx={{
-                  borderRadius: "20px",
-                  height: "100%",
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  zIndex: 2,
-                }}
-              >
-                <CardContent sx={{ margin: "auto" }}>
-                  <TypographyText
-                    Typography={data.txt}
-                    fontSize={"1.5rem"}
-                    textAlign="center"
-                    color="#D66A3A"
-                  />
-                  <TypographyText
-                    Typography={data.txt1}
-                    fontSize={".9rem"}
-                    textAlign="left"
-                    color="white"
-                  />
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Grid> */}
     </React.Fragment>
   );
 };

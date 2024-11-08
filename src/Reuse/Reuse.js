@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Button from "@mui/material/Button";
-
-import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Box, Card, CardContent, CardHeader, CardMedia, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 export const useScreenSize = () => {
   const theme = useTheme();
@@ -30,6 +31,7 @@ export function TypographyText(props) {
         transform: props.transform,
         margin: props.margin,
         fontFamily: props.fontFamily,
+        padding:props.padding,
    fontStyle:'normal',
         // fontFamily: "'Poppins', sans-serif",
         marginTop: props.marginTop,
@@ -228,8 +230,11 @@ const DownloadBrochure = () => {
          <Buttons
                         Buttonname={'Download Brochure'}
                         color="white"
-                        textAlign='left'
-                        onClick={handleDownload}
+        textAlign='left'
+      fontSize='1rem'
+        onClick={handleDownload}
+        bgcolor="rgba(19, 19, 20,.7)"
+        
                       /> 
     </div>
   );
@@ -240,3 +245,249 @@ export default DownloadBrochure;
 
 
 
+export const CardWithIcon = (props) => {
+  return (
+    <Card
+      sx={{
+        bgcolor: props.bgcolorcard,
+        border: props.bordercard,
+        // p: "2%",
+        padding: props.paddingcard,
+        minHeight: props.minHeight,
+        margin: "auto",
+        width: props.width,
+        maxWidth: props.maxWidthcard,
+        position: props.positioncard,
+        height: "100%",
+        borderRadius:'20px'
+      }}
+    >
+      {props.Icon ? (
+        <CardHeader
+          subheader={props.subheader ? props.subheader : ""}
+          title={<>{props.Icon}</>}
+        />
+      ) : (
+        ""
+      )}
+      {props.img ? (
+        <CardMedia
+          component="img"
+          image={props.img}
+          sx={{ maxHeight: props.imgMaxHeight, objectFit: props.objectFit }}
+          alt="green iguana"
+        />
+      ) : (
+        ""
+      )}
+      <CardContent sx={{ padding: "5%", bgcolor: props.cardcontentbgcolor }}>
+        <TypographyText
+          component="div"
+          variant={props.varianthead}
+         fontSize={props.fontSize}
+          textAlign="center"
+          color={props.colorfirst}
+               fontFamily="Khand"
+          Typography={props.Typography}
+   
+        />
+        {props.Typography1 ?
+          <TypographyText
+            color={props.colorcontent}
+            // textAlign="centre"
+            textAlign={props.textAligncardgintentportion}
+    
+            fontFamily='CamptonLight'
+  
+  
+            variant={props.variant1}
+            Typography={props.Typography1}
+            fontSize={props.fontSize1}
+          /> : ''}
+        {props.Typography2 ? (
+          <TypographyText
+            color={props.colorcontent}
+            // textAlign="centre"
+            textAlign={props.textAligncardgintentportion}
+            //  fontWeight='bolder'
+            fontWeight="500"
+            fontFamily="Khand-Regular"
+            variant={props.variant1}
+            Typography={props.Typography2}
+            fontSize={props.fontSizetyp3}
+          />
+        ) : (
+          ""
+        )}
+
+        {props.Buttonname ? (
+          <Buttons
+            Buttonname={props.Buttonname}
+            color1={props.color1}
+            fontSize={props.fontSize}
+            color={props.color}
+            bgcolor={props.bgcolor}
+            bgcolor1={props.bgcolor1}
+            float={props.float}
+            textTransform={props.textTransform}
+            width={props.btwidth}
+            height={props.height}
+            border={props.border}
+            marginBottom={props.marginBottom}
+            fontFamily="Khand-Bold"
+            fontWeight="600"
+          />
+        ) : (
+          ""
+        )}
+      </CardContent>
+    </Card>
+  );
+};
+
+export const Form = (props) => { 
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const contactform = [
+      { placeholder: "Name", name: "from_name", type: "text" },
+      { placeholder: "Email Address", name: "email", type: "email" },
+  
+      { placeholder: "Message", name: "message", type: "text" },
+      { placeholder: "Phone Number", name: "phone", type: "text" },
+    ];
+    const form = useRef();
+  
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm(
+          "service_0auaq0i",
+          "template_ewhgn0a",
+          form.current,
+          "IkNjveX3-qfxw3Pw4"
+        )
+        .then(
+          (result) => {
+            toast.success("Thank you for contact us", {
+              position: "top-right",
+              autoClose: 3000, // Duration in milliseconds
+            });
+          },
+          (error) => {
+            toast.error("hai", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: theme,
+            });
+            console.log(error.text);
+          }
+        );
+      // Clear the form fields after submission
+      form.current.reset();
+    };
+  return(             <Grid
+    container
+      spacing={2}
+      sx={{
+          padding: '5%',
+        margin: 'auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+        height: '100%',
+backgroundColor:'black'
+ 
+      }}
+  >
+      <Grid item lg={12} md={12} xs={12} sm={12}
+      sx={{zIndex:1,margin:'auto'}}>
+       <Grid container sx={{}}>
+       <Grid item xs={12}>
+ 
+
+       <TypographyText
+        Typography={<>Drop Us
+          <span style={{color:'#D66A3A'}}> a Line</span></>}
+        color="white"
+        fontSize="2rem"
+             fontFamily="Khand"
+      />
+      </Grid>
+      <Grid item xs={12}>
+<form action="" ref={form} onSubmit={sendEmail}>
+        <Grid container>
+          {contactform.map((data, index) => (
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{ pr: "16px", pb: "16px" }}
+            >
+              {index === 2 ? (
+                <textarea
+                  fullWidth
+                  type={data.type}
+                  name={data.name}
+                  placeholder={data.placeholder}
+                  required
+                  style={{
+                    height: "150px",
+                    width: "100%",
+                    border: "none",
+             fontFamily:'CamptonLight',
+               color:'white',
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  }}
+                />
+              ) : (
+                <input
+                  fullWidth
+                  type={data.type}
+                  name={data.name}
+                    placeholder={data.placeholder}
+           
+                  required
+                  style={{
+                    height: "40px",
+                    width: "100%",
+                    border: "none",
+                    color:'white',
+                  fontFamily:'CamptonLight',
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  }}
+                />
+              )}
+            </Grid>
+          ))}
+          <Grid item xs={12} sx={{ pr: "16px", pb: "16px" }}>
+            <Button
+              variant="contained"
+              type="submit"
+              className="button1"
+              sx={{
+                 bgcolor: " rgba(255, 255, 255, 0.1)",
+                color: "white",
+                textAlign: "left",
+                textTransform: "capitalize",
+                fontFamily:"Khand",
+              }}
+            >
+              Send Message
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
+              </Grid>
+          </Grid>
+      </Grid>
+ 
+      </Grid>)
+}

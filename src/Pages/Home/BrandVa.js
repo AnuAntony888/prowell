@@ -8,6 +8,7 @@ import {
   ImageListItemBar,
   Typography,
   useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import React, { useEffect } from "react";
 import img1 from "../../Assets/9.jpg";
@@ -20,11 +21,14 @@ import img7 from "../../Assets/pen3.png";
 import img8 from "../../Assets/pen2.png";
 
 import DownloadBrochure, { TypographyText } from "../../Reuse/Reuse";
+import ContForm from "../ContactUs/ContForm";
 
 const BrandVa = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const theme = useTheme(); // Get the theme object
+  const isSmallScreen = useMediaQuery(theme.breakpoints.up("md"));
   const images = [
     { src: img2, title: "COMBO™ ANA" },
     { src: img3, title: "RAXA™ LUXURY BOXING BAGS" },
@@ -35,61 +39,9 @@ const BrandVa = () => {
     { src: img8, title: "BANKA™ LUXURY FITNESS BENCH" },
   ];
 
-  return (
+  return (<>
     <Grid container spacing={2} sx={{ height: "100%", marginTop: "10px" }}>
-      {/* <Grid
-        item
-        lg={6}
-        md={5}
-        sm={6}
-        xs={12}
-        sx={{
-          position: "relative",
-        }}
-      >
 
-        <img
-          src={img1}
-          alt="Your Alt Text"
-          style={{ width: "100%", height: "100%" }}
-        />      
-        <Card
-          style={{
-            position: "absolute",
-            top: "25%",
-            left: "10%",
-            width: "80%",
-            backgroundColor: "rgba(4, 51, 108, 0.5)" , // slight transparency
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // shadow for depth
-          }}
-        >
-          <CardContent>
-            <TypographyText
-              Typography={"Pent"}
-              fontSize={"2rem"}
-              textAlign="center"
-              color="white"
-                      fontFamily="Khand"
-                      />
-                          <TypographyText
-              Typography={"Luxury Meets Functionality"}
-              fontSize={"1.2rem"}
-              textAlign="center"
-              color="white"
-                      fontFamily="Khand"
-                      />
-                      
-            <TypographyText
-              Typography={
-                " Luxury Meets Functionality PENT combines aesthetic design with functional fitness, offering luxurious handcrafted equipment that is pristine and practical. These exclusive equipment are highly customizable to seamlessly match the aesthetics of your unique space. PENT is the perfect match for the ones who appreciate exclusivity and expect top-notch performance from their equipment."
-              }
-          fontFamily='CamptonLight'
-              textAlign="left"
-              color="white" />
-                  <DownloadBrochure />
-          </CardContent>
-        </Card>
-      </Grid> */}
       <Grid
         item
         lg={6}
@@ -103,33 +55,32 @@ const BrandVa = () => {
         <Grid
           container
           spacing={2}
-          sx={{
-            margin: "auto",
-      
-         
-          }}
+        
         >
-          <Grid item lg={11} md={11} sm={11} xs={11}>
+        <Grid item lg={.5} md={.5} sm={.5} xs={.5}></Grid>
+          <Grid item lg={11} md={11} sm={11} xs={11}
+          >
             <Box sx={{
               padding: '5%', marginTop: '200px',
-              backgroundColor: "rgba(4, 51, 108, 0.5)" 
+              backgroundColor: "#B05B34" 
      
             }}>
             <TypographyText
               Typography={"Pent"}
-              fontSize={"2rem"}
+                // fontSize={"2rem"}
+                variant={isSmallScreen ? "h3" : "h4"}
               textAlign="center"
               color="white"
               fontFamily="Khand"
-            />
+            /><br/>
             <TypographyText
               Typography={"Luxury Meets Functionality"}
-              fontSize={"1.2rem"}
+              fontSize={"1.5rem"}
               textAlign="center"
               color="white"
               fontFamily="Khand"
             />
-
+<br/>
             <TypographyText
               Typography={
                   <>
@@ -144,13 +95,14 @@ exclusivity and expect top-notch performance
 from their equipment.</>
               }
               fontFamily="CamptonLight"
-              textAlign="left"
+              textAlign="justify"
               color="white"
-            />
+            /><br/>
             <DownloadBrochure />
             </Box>
            
           </Grid>
+          <Grid item lg={0.5} md={0.5} sm={0.5} xs={0.5}></Grid>
         </Grid>
       </Grid>
       <Grid item lg={6} md={7} sm={6} sx={12}>
@@ -176,6 +128,8 @@ from their equipment.</>
         </Box>
       </Grid>
     </Grid>
+    <ContForm/>
+    </>
   );
 };
 

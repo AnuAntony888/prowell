@@ -22,6 +22,7 @@ import img10 from "../../Assets/mov4.jpg";
 import img11 from "../../Assets/mov3.jpg";
 
 import DownloadBrochure, { TypographyText } from "../../Reuse/Reuse";
+import ContForm from "../ContactUs/ContForm";
 
 const Brandpent = () => {
   useEffect(() => {
@@ -86,21 +87,21 @@ const Brandpent = () => {
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // shadow for depth
                 }}
               >
-                <CardContent>
+                <CardContent sx={{padding:'5%'}}>
                   <TypographyText
                     Typography={"Movement"}
-                    fontSize={"2rem"}
+                    variant={isSmallScreen ? "h3" : "h4"}
                     textAlign="center"
                     color="white"
                     fontFamily="Khand"
                   />
                   <TypographyText
                     Typography={"Innovation in Every Move"}
-                    fontSize={"1.2rem"}
+                    fontSize={"1.5rem"}
                     textAlign="center"
                     color="white"
                     fontFamily="Khand"
-                  />
+                  /><br/>
                   <TypographyText
                     Typography={
                       <>
@@ -116,9 +117,9 @@ const Brandpent = () => {
                       </>
                     }
                     fontFamily="CamptonLight"
-                    textAlign="left"
+                    textAlign="justify"
                     color="white"
-                  />
+                  /><br/>
                   <DownloadBrochure />
                 </CardContent>
               </Card>
@@ -136,18 +137,19 @@ const Brandpent = () => {
               <CardContent>
                 <TypographyText
                   Typography={"Movement"}
-                  fontSize={"2rem"}
+                  variant={isSmallScreen ? "h3" : "h4"}
+                  fontFamily="Khand"  
                   textAlign="center"
                   color="white"
-                  fontFamily="Khand"
-                />
+     
+                /><br/>
                 <TypographyText
                   Typography={"Innovation in Every Move"}
-                  fontSize={"1.2rem"}
+                  fontSize={"1.5rem"}
                   textAlign="center"
                   color="white"
                   fontFamily="Khand"
-                />
+                /><br/>
                 <TypographyText
                   Typography={
                     <>
@@ -163,9 +165,9 @@ const Brandpent = () => {
                     </>
                   }
                   fontFamily="CamptonLight"
-                  textAlign="left"
+                  textAlign="justify"
                   color="white"
-                />
+                /><br/>
                 <DownloadBrochure />
               </CardContent>
             </Card>
@@ -217,6 +219,7 @@ const Brandpent = () => {
           </Box> */}
         </Grid>
       </Grid>
+      <ContForm/>
     </>
   );
 };

@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: CamptonLight !important;
+overflow-x: hidden;
 }
 
 a {
@@ -12,3 +13,12 @@ a {
   /* font-family: imported; */
   src: url(../src/campton-cufonfonts/CamptonLight.otf);
 }
+
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+.slick-dots {bottom: 0 !important;}
